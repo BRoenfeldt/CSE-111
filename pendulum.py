@@ -1,7 +1,7 @@
 """Braden Roenfeldt
 Brother Keers
-CSE111 -  12:45"""
-
+CSE111 -  12:45
+"""
 """
 The time in seconds that a pendulum takes to swing back and
 forth once is given by this formula:

@@ -1,9 +1,7 @@
 """Braden Roenfeldt
 Brother Keers
-CSE111 -  12:45"""
-
-
-
+CSE111 -  12:45
+"""
 """
 When you physically exercise to strengthen your heart, you
 should maintain your heart rate within a range for at least 20
