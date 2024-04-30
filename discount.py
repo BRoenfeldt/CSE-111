@@ -8,8 +8,10 @@ from datetime import datetime
 def discountApplier(subtotal):
     if subtotal >= 50:
         print(f"Congratulations! You get a 10% discount.")
+        oldSubtotal = subtotal
         subtotal = subtotal - subtotal*.1
         print(f"Your new subtotal is ${subtotal:.2f}")
+        print(f"Your discount amount is ${oldSubtotal-subtotal:.2f}")
         tax(subtotal)
     else:
         print(f"Sorry, no discount today.")
