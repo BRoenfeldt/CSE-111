@@ -5,22 +5,27 @@ CSE111 -  12:45
 
 from datetime import datetime
 
-dayOfWeek = ""
 def discountApplier(subtotal):
     if subtotal >= 50:
-        subtotal = discountApplier(subtotal, dayChecker())
         print(f"Congratulations! You get a 10% discount.")
         subtotal = subtotal - subtotal*.1
         print(f"Your new subtotal is ${subtotal:.2f}")
+        tax(subtotal)
     else:
         print(f"Sorry, no discount today.")
         print(f"Your subtotal is ${subtotal:.2f}")
+        tax(subtotal)
+
+def discountDenier(subtotal):
+        print(f"Sorry, no discount today.")
+        print(f"Your subtotal is ${subtotal:.2f}")
+        tax(subtotal)
 
 def dayChecker(subtotal):
     weekInt = datetime.now().weekday()
     if weekInt == 0:
         dayOfWeek = "Monday"
-        discountApplier(subtotal)
+        discountDenier(subtotal)
     elif weekInt == 1:
         dayOfWeek = "Tuesday"
         discountApplier(subtotal)
@@ -29,19 +34,24 @@ def dayChecker(subtotal):
         discountApplier(subtotal)
     elif weekInt == 3:
         dayOfWeek = "Thursday"
-        discountApplier(subtotal)
+        discountDenier(subtotal)
     elif weekInt == 4:
         dayOfWeek = "Friday"
-        discountApplier(subtotal)
+        discountDenier(subtotal)
     elif weekInt == 5:
         dayOfWeek = "Saturday"
-        discountApplier(subtotal)
+        discountDenier(subtotal)
     elif weekInt == 6:
         dayOfWeek = "Sunday"
-        discountApplier(subtotal)
-    print(dayOfWeek)
+        disscountDenier(subtotal)
+    #print(dayOfWeek)
 
+def tax(subtotal):
+    tax_rate = 0.06
+    tax = subtotal * tax_rate
+    print(f"Your tax is ${tax:.2f}")
+    total = subtotal + tax
+    print(f"Your total is ${total:.2f}")
     
-    
-subtotal = float(input("What is your subtotal?  $"))
-dayChecker(subtotal)
+user_subtotal = float(input("What is your subtotal?  $"))
+dayChecker(user_subtotal)
