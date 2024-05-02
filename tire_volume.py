@@ -1,6 +1,9 @@
-"""Braden Roenfeldt
-Brother Keers
-CSE111 -  12:45
+"""
+Author: Braden Roenfeldt
+Professor: Brother Keers
+URL: 
+
+This file creates or appends to a text file named tireVolume.txt with the date and tire information taken from the user input from the terminal.
 """
 
 import math
