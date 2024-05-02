@@ -42,8 +42,8 @@ def  addToVolText():
     with open("tireVolume.txt", "a") as file:
         currentDateTime = datetime.now(tz=None)
         #print(currentDateTime) used for debugging
-        currentDateTime = currentDateTime.strftime("%m/%d/%Y")
-        file.write(f"Date: {currentDateTime}, Tire Information: {computeVolume()}\n")
+        currentDateTime = currentDateTime.strftime("%Y/%m/%d")
+        file.write(f"{currentDateTime}, {computeVolume()}\n")
         #print(currentDateTime), used for debugging
 
 def main():
