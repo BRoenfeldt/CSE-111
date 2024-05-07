@@ -45,7 +45,7 @@ def dayChecker(subtotal):
         discountDenier(subtotal)
     elif weekInt == 6:
         dayOfWeek = "Sunday"
-        disscountDenier(subtotal)
+        discountDenier(subtotal)
     #print(dayOfWeek)
 
 def tax(subtotal):
