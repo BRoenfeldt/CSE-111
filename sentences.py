@@ -11,9 +11,10 @@ def main():
         #Randomly picks a quantity and tense each time it loops to create new sentences
         quantity = random.randint(0,1)
         tense = random.choice(["past", "present", "future"])
-        print(make_sentence(quantity, tense))
-        #iterates the loop
-        i+=1
+        generatedSentence = make_sentence(quantity, tense)
+        print(f"{generatedSentence}")
+        addToText(generatedSentence)
+        
 
 def make_sentence(quantity, tense):
     """Build and return a sentence with three words:
@@ -27,10 +28,49 @@ def make_sentence(quantity, tense):
     determiner = get_determiner(quantity)
     noun = get_noun(quantity)
     verb = get_verb(quantity, tense)
+    preposition = get_prepositional_phrase(quantity)
     #Returns the sentence with the determiner, noun, and verb
-    sentence = f"{determiner} {noun} {verb}."
+    sentence = f"{determiner} {noun} {verb} {preposition.lower()}."
     return sentence
 
+def get_preposition():
+    """Return a randomly chosen preposition
+    from this list of prepositions:
+        "about", "above", "across", "after", "along",
+        "around", "at", "before", "behind", "below",
+        "beyond", "by", "despite", "except", "for",
+        "from", "in", "into", "near", "of",
+        "off", "on", "onto", "out", "over",
+        "past", "to", "under", "with", "without"
+
+    Return: a randomly chosen preposition.
+    """
+    #List of prepositions
+    words = ["about", "above", "across", "after", "along", "around", "at", "before", "behind", "below", "beyond", "by", "despite", "except", "for", "from", "in", "into", "near", "of", "off", "on", "onto", "out", "over", "past", "to", "under", "with", "without"]
+    #Randomly chooses a preposition
+    word = random.choice(words)
+    return word
+
+def get_prepositional_phrase(quantity):
+    """Build and return a prepositional phrase composed
+    of three words: a preposition, a determiner, and a
+    noun by calling the get_preposition, get_determiner,
+    and get_noun functions.
+
+    Parameter
+        quantity: an integer that determines if the
+            determiner and noun in the prepositional
+            phrase returned from this function should
+            be single or pluaral.
+    Return: a prepositional phrase.
+    """
+    #Calls the functions to get the preposition, determiner, and noun
+    preposition = get_preposition()
+    determiner = get_determiner(quantity)
+    noun = get_noun(quantity)
+    #Returns the prepositional phrase with the preposition, determiner, and noun
+    phrase = f"{preposition} {determiner} {noun}"
+    return phrase
 
 def get_determiner(quantity):
     """Return a randomly chosen determiner. A determiner is
@@ -126,6 +166,18 @@ def get_verb(quantity, tense):
         words = ["drank", "ate", "grew", "laughed", "thought", "ran", "slept", "talked", "walked", "wrote"]
         chosen_word = random.choice(words)
     return chosen_word
+
+def addToText(sentence):
+    """
+    Writes the generated sentences to a text file named sentences.txt
+    Args:
+        None
+
+    Returns:
+        None
+    """
+    with open("sentences.txt", "a") as file:
+        file.write(f"{sentence}\n")
 
 #Main funtion if statement for importing
 if __name__ == "__main__":
