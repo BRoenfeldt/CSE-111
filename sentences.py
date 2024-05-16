@@ -1,6 +1,8 @@
 """Braden Roenfeldt
 Brother Keers
 12:45
+
+video link: 
 """
 
 import random
