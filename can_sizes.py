@@ -7,7 +7,6 @@ Brother Keers
 #Goal is to print out 12 different cans with their radi, height, and cost per can
 
 import math
-
 def main():
     #Define the can names, radii and heights
     canNames = ["#1 Picnic", "#1 Tall", "#2", "#2.5", "#3 Cynlinder", "#5", "#6Z", "#8Z Short", "#10", "#211", "#300", "#303"]
