@@ -6,6 +6,7 @@ video link:
 """
 
 import random
+from datetime import datetime
 
 def main():
     #Calls the make_sentence function 6 times
@@ -16,6 +17,7 @@ def main():
         generatedSentence = make_sentence(quantity, tense)
         print(f"{generatedSentence}")
         addToText(generatedSentence)
+    addDateToText()
         
 
 def make_sentence(quantity, tense):
@@ -180,6 +182,20 @@ def addToText(sentence):
     """
     with open("sentences.txt", "a") as file:
         file.write(f"{sentence}\n")
+
+def addDateToText():
+    """
+    Writes the current date and time to a text file named sentences.txt
+    Args:
+        None
+    Returns:
+        None
+    """
+    #opens the file and writes the current date and time
+    with open("sentences.txt", "a") as file:
+        currentDateTime = datetime.now(tz=None)
+        currentDateTime = currentDateTime.strftime("%Y/%m/%d")
+        file.write(f"{currentDateTime}\n")
 
 #Main funtion if statement for importing
 if __name__ == "__main__":
