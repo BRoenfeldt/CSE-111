@@ -2,7 +2,7 @@
 Brother Keers
 12:45
 
-video link: 
+video link: https://youtu.be/I99OKbGJl90
 """
 
 import random
@@ -16,7 +16,7 @@ def main():
         tense = random.choice(["past", "present", "future"])
         generatedSentence = make_sentence(quantity, tense)
         print(f"{generatedSentence}")
-        addToText(generatedSentence)
+        addSentenceToText(generatedSentence)
     addDateToText()
         
 
@@ -56,7 +56,8 @@ def get_preposition():
     return word
 
 def get_prepositional_phrase(quantity):
-    """Build and return a prepositional phrase composed
+    """
+    Build and return a prepositional phrase composed
     of three words: a preposition, a determiner, and a
     noun by calling the get_preposition, get_determiner,
     and get_noun functions.
@@ -171,7 +172,7 @@ def get_verb(quantity, tense):
         chosen_word = random.choice(words)
     return chosen_word
 
-def addToText(sentence):
+def addSentenceToText(sentence):
     """
     Writes the generated sentences to a text file named sentences.txt
     Args:
@@ -194,7 +195,7 @@ def addDateToText():
     #opens the file and writes the current date and time
     with open("sentences.txt", "a") as file:
         currentDateTime = datetime.now(tz=None)
-        currentDateTime = currentDateTime.strftime("%Y/%m/%d")
+        currentDateTime = currentDateTime.strftime("%Y/%m/%d - %H:%M:%S")
         file.write(f"{currentDateTime}\n")
 
 #Main funtion if statement for importing
