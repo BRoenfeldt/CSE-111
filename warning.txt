@@ -1,0 +1,1 @@
+  WARNING: The scripts py.test.exe and pytest.exe are installed in 'C:\Users\brade\AppData\Roaming\Python\Python311\Scripts' which is not on PATH.s' which is not on PATH.
