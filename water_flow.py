@@ -1,5 +1,3 @@
-
-
 def water_column_height(tower_height, tank_height):
     """
     Calculates the height of the water column in the tank.
@@ -64,7 +62,7 @@ def pressure_loss_from_pipe_reduction(larger_diameter, fluid_velocity, reynolds_
     pressure_loss = -k * 998.2 * (fluid_velocity**2) / 2000
     return pressure_loss
 
-    PVC_SCHED80_INNER_DIAMETER = 0.28687 # (meters)  11.294 inches
+PVC_SCHED80_INNER_DIAMETER = 0.28687 # (meters)  11.294 inches
 PVC_SCHED80_FRICTION_FACTOR = 0.013  # (unitless)
 SUPPLY_VELOCITY = 1.65               # (meters / second)
 
