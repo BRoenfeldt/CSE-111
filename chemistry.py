@@ -1,8 +1,15 @@
 def main():
+
     for element in make_periodic_table():
         print(f"{element[1]} {element[2]}")
 
-
+def molecular_weight_calculator(molecule):
+    periodic_table = make_periodic_table()
+    molecular_weight = 0
+    for element in periodic_table:
+        count = molecule.count(element[0])
+        molecular_weight += count * element[2]
+    return molecular_weight
 
 def make_periodic_table():
     periodic_table_list = [
