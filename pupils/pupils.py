@@ -8,6 +8,14 @@ SURNAME_INDEX = 1
 BIRTHDATE_INDEX = 2
 
 
+def main():
+    # Read the data from the pupils.csv file into a compound list.
+    compound_list = read_compound_list("pupils.csv")
+
+    # Print the compound list to the console.
+    print_list(compound_list)
+
+
 def read_compound_list(filename):
     """Read the text from a CSV file into a compound list.
     The compound list will contain small lists. Each small
@@ -39,3 +47,17 @@ def read_compound_list(filename):
             compound_list.append(row)
 
     return compound_list
+
+
+def print_list(compound_list):
+    """Print the compound list to the console.
+
+    Parameter
+        compound_list: the compound list to print.
+    """
+    for row in compound_list:
+        print(row)
+
+
+if __name__ == "__main__":
+    main()
