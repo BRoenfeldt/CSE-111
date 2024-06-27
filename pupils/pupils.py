@@ -11,9 +11,16 @@ BIRTHDATE_INDEX = 2
 def main():
     # Read the data from the pupils.csv file into a compound list.
     compound_list = read_compound_list("pupils.csv")
-
     # Print the compound list to the console.
     print_list(compound_list)
+    #create lambda function to sort the compound list by birthdate
+    birthdates_from_list = lambda list: list[BIRTHDATE_INDEX]
+    #sort the birthdates in ascending order
+    birthdates_print = sorted(compound_list, key=birthdates_from_list)
+    #print(f"{birthdates_print}\n") print the birthdates in the order they are in the csv file
+    #print the birthdates in ascending order
+    print(f"Ordered from oldest to youngest\n{birthdates_print}")
+
 
 
 def read_compound_list(filename):
@@ -56,7 +63,7 @@ def print_list(compound_list):
         compound_list: the compound list to print.
     """
     for row in compound_list:
-        print(row)
+        print(f"{row}\n")
 
 
 if __name__ == "__main__":
