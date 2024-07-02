@@ -1,6 +1,9 @@
 import tkinter as tk
 import os
-
+"""
+ADD IN THE FOLLOWING CODE TO THE MAIN.PY FILE
+GRAB USER INPUTS FROM THE TEXT FIELDS TO BE USED IN THE CHANGE FILE NAME FUNCTIONS
+"""
 
 # Define the function to change a single file name
 def change_single_file_name(old_filename, new_filename):
