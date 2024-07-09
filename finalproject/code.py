@@ -33,6 +33,6 @@ def rename_file(original_path, new_name):
         return False
 
 # Example usage
-original_file_path = "path/to/your/file.txt"
-new_file_name = "new_name.txt"
+original_file_path = "./testing folder/new_name.txt"
+new_file_name = "test.txt"
 rename_file(original_file_path, new_file_name)
