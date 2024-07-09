@@ -4,6 +4,18 @@ import os
 ADD IN THE FOLLOWING CODE TO THE MAIN.PY FILE
 GRAB USER INPUTS FROM THE TEXT FIELDS TO BE USED IN THE CHANGE FILE NAME FUNCTIONS
 """
+def directory_fix(old_filename,directory):
+    """Fix the directory path to be used in the change file name functions.
+    Parameter directory: the directory path to fix.
+    Returns: the fixed directory path.
+    """
+    # Remove leading and trailing whitespace
+    directory = directory.strip()
+    # Replace forward slashes with backslashes
+    directory = directory.replace("\\", "/")
+    new= "./" + directory + "/" + old_filename
+    #print(f"Test directory: {directory}")
+    return new
 
 # Define the function to change a single file name
 def change_single_file_name(new_filename, directory):
@@ -20,19 +32,24 @@ def change_single_file_name(new_filename, directory):
     # Check if the original file exists
     if not os.path.isfile(directory):
         print(f"The file {directory} does not exist.")
+        return False
     
     # Extract directory path
     directory = os.path.dirname(directory)
 
     # Construct new file path
-    new_path = os.path.join(directory, new_filename)
+    new_path = directory_fix(new_filename, directory)
     print(f"New path = {new_path}")
+    os.access()
     # Rename the file
     try:
         os.rename(directory, new_path)
         print(f"File renamed to {new_path}")
+        return True
+
     except OSError as e:
         print(f"Error: {e}")
+        return False
 
 #define the main function
 def main():
