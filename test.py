@@ -1,8 +1,4 @@
-def main():
-    colors = ["yellow", "red", "green", "yellow", "blue"]
-    print(colors.index("red"))
+numbers = [23, -7, 8.5, 16, 30]
 
-
-
-if __name__ == "__main__":
-    main()
+position = numbers.index(16)
+print(position)
