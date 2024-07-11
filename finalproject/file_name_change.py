@@ -1,10 +1,13 @@
 import tkinter as tk
 import os
+from datetime import datetime
+
 """
 ADD IN THE FOLLOWING CODE TO THE MAIN.PY FILE
 Add in better explanations, maybe another pop up window to show the user what the GUI is for.
-Add in multiple file changes code to make it work
+Fix GUi sizing so all text is visible
 Think about testing files for final project
+    Currently working on log test
 """
 
 def directory_fix(old_filename,directory):
@@ -17,7 +20,9 @@ def directory_fix(old_filename,directory):
     # Replace forward slashes with backslashes
     directory = directory.replace("\\", "/")
     edited_directory = "./" + directory + "/" + old_filename
-    #print(f"Test directory: {directory}")
+    #debeugging print
+        #print(f"Test directory: {directory}")
+    #return the edited/fixed directory
     return edited_directory
 
 # Define the function to change a single file name
@@ -28,8 +33,14 @@ def change_single_file_name(old_directory, new_directory):
     """
     #try to rename the file and catch errors
     try:
+        #rename the file
         os.rename(old_directory, new_directory)
-        print(f"Successfully renamed '{old_directory}' to '{new_directory}'")
+        #log the changes
+        log_changes(old_directory, new_directory)
+        #print success messasge
+        print(f"Successfully renamed '{old_directory}' to '{new_directory}'. Check log.txt for more information.")
+
+    #catch the errors and print out the error message
     except FileNotFoundError:
         print(f"Error: The file '{old_directory}' does not exist.")
     except FileExistsError:
@@ -39,6 +50,18 @@ def change_single_file_name(old_directory, new_directory):
     except Exception as e:
         print(f"An unexpected error occurred: {e}")
 
+def log_changes(old_directory, new_directory):
+    """Log the changes made to the file names.
+    Parameter old_filename: the current name of the file.
+    Parameter new_filename: the new name for the file.
+    """
+    # Get the current date and time
+    current_time = datetime.now(tz=None)
+    current_time = current_time.strftime("%Y/%m/%d - %H:%M:%S")
+    # Open the log file in append mode
+    with open("log.txt", "a") as file:
+        # Write the changes to the log file
+        file.write(f"Change made: {old_directory} -> {new_directory} at {current_time}\n")
 
 #define the main function
 def main():
@@ -55,15 +78,15 @@ def main():
 
     # Create and pack the old file name entry
     old_file_entry = tk.Entry(root, width=30)
-    old_file_entry.insert(0, "New File Name")
+    old_file_entry.insert(0, "New File Name - ex: CSE11_notes.txt")
     old_file_entry.pack()
     # Create and pack the new file name entry
     new_file_entry = tk.Entry(root, width=30)
-    new_file_entry.insert(0, "Old File Name")
+    new_file_entry.insert(0, "Old File Name - ex: class_notes.txt")
     new_file_entry.pack()
     # Create and pack the directory entry
     directory_entry = tk.Entry(root, width=30)
-    directory_entry.insert(0, "Directory")
+    directory_entry.insert(0, "Directory, (Must be in the same folder as this file)")
     directory_entry.pack()
 
     #define the function to grab the inputs
@@ -71,29 +94,31 @@ def main():
         """Get the user inputs from the text fields.
         Returns: old_filename, new_filename, directory
         """
+        #Set the variables to the user inputs by grabbing the text from the entry fields
         old_filename = old_file_entry.get()
         new_filename = new_file_entry.get()
         directory = directory_entry.get()
+        #call the directory fix function to fix the directory path using the new and old filenames
         new_directory = directory_fix(old_filename, directory)
         old_directory = directory_fix(new_filename, directory)
+        #return  all the variables
         return new_directory, old_directory
 
     #define the function to execute the change single file name function
     def execute_change_single_file_name():
         """Get the user inputs and call the change_single_file_name function."""
+        #set new_directory and old_directory to the return values of the grab_inputs function
         new_directory, old_directory = grab_inputs()
-        #print(f"Old File Name: {old_filename}")
-        #print(f"New File Name: {new_filename}")
-        #print(f"Directory: {directory}")
+        #debugging prints
+            #print(f"Old File Name: {old_filename}")
+            #print(f"New File Name: {new_filename}")
+            #print(f"Directory: {directory}")
+        #call the change_single_file_name function with the new_directory and old_directory variables
         change_single_file_name(old_directory, new_directory)
 
     # Create and pack the single file button
     single_file_button = tk.Button(root, text="Change Single File Name", command=execute_change_single_file_name)
     single_file_button.pack()
-
-    # Create and pack the multi file button
-    multiple_file_button = tk.Button(root, text="Change Multiple File Names", command=execute_change_single_file_name)
-    multiple_file_button.pack()
 
     # Start the GUI event loop
     root.mainloop()
