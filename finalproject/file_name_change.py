@@ -10,6 +10,9 @@ Think about testing files for final project
     Currently working on log test
 """
 
+#Link to usage example on Youtube: https://www.youtube.com/watch?
+
+
 def directory_fix(old_filename,directory):
     """Fix the directory path to be used in the change file name functions.
     Parameter directory: the directory path to fix.
@@ -68,25 +71,25 @@ def main():
     # Create the main window
     root = tk.Tk()
     root.title("Change File Names")
-    root.geometry("300x300")
+    root.geometry("500x250")
     # Create and pack the header label
     header = tk.Label(root, text="Welcome to the File Name Change GUI!")
     header.pack(pady=10)
     #Explanation of the GUI
-    explanation = tk.Label(root, text="Enter the file name you would like to change and the new file name. Then select the file or directory you would like to change. If a file contains the old file name, it will be changed to the new file name.", wraplength=250)
+    explanation = tk.Label(root, text="Enter the file name you would like to change and the new file name. Then select the file or directory you would like to change. If a file contains the old file name, it will be changed to the new file name.", wraplength=400)
     explanation.pack(pady=20)
 
     # Create and pack the old file name entry
-    old_file_entry = tk.Entry(root, width=30)
+    old_file_entry = tk.Entry(root, width=75)
     old_file_entry.insert(0, "New File Name - ex: CSE11_notes.txt")
     old_file_entry.pack()
     # Create and pack the new file name entry
-    new_file_entry = tk.Entry(root, width=30)
+    new_file_entry = tk.Entry(root, width=75)
     new_file_entry.insert(0, "Old File Name - ex: class_notes.txt")
     new_file_entry.pack()
     # Create and pack the directory entry
-    directory_entry = tk.Entry(root, width=30)
-    directory_entry.insert(0, "Directory, (Must be in the same folder as this file)")
+    directory_entry = tk.Entry(root, width=75)
+    directory_entry.insert(0, "Directory - ex: myFiles/importantFiles (Must be in the same folder as where this script is ran)")
     directory_entry.pack()
 
     #define the function to grab the inputs

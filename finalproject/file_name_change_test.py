@@ -1,11 +1,11 @@
-from file_name_change import log_changes
+from file_name_change import change_single_file_name
 from datetime import datetime
 import pytest
 
 current_time = datetime.now(tz=None)
 current_time = current_time.strftime("%Y-%m-%d %H:%M:%S.%f")
 
-def test_log_changes():
-    assert log_changes("testnameold.txt", "testnamenew.txt") == "Change made: testnameold.txt -> testnamenew.txt at " + current_time + "\n"
+def test_change_single_file_name():
+    assert change_single_file_name("testnameold.txt", "testfolder") == "testfolder/testnameold.txt"
 
-test_log_changes()
+test_change_single_file_name()
