@@ -13,7 +13,7 @@ Think about testing files for final project
 #Link to usage example on Youtube: https://www.youtube.com/watch?
 
 
-def directory_fix(old_filename,directory):
+def directory_fix(old_filename, directory):
     """Fix the directory path to be used in the change file name functions.
     Parameter directory: the directory path to fix.
     Returns: the fixed directory path.
@@ -24,7 +24,7 @@ def directory_fix(old_filename,directory):
     directory = directory.replace("\\", "/")
     edited_directory = "./" + directory + "/" + old_filename
     #debeugging print
-        #print(f"Test directory: {directory}")
+    print(f"Test directory: {edited_directory}")
     #return the edited/fixed directory
     return edited_directory
 
