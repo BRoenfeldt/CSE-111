@@ -6,3 +6,28 @@ Change made: ./testing folder/test2/tested.txt -> ./testing folder/test2/test.tx
 Change made: ./testing folder/test2/test.txt -> ./testing folder/test2/tested.txt at 2024/07/13 - 18:04:13
 Change made: ./testing folder/test2/tested.txt -> ./testing folder/test2/test.txt at 2024/07/13 - 19:07:34
 Change made: ./testing folder/test2/test.txt -> ./testing folder/test2/tested.txt at 2024/07/13 - 19:08:41
+Change made: testnameold.txt -> testnamenew.txt at 2024/07/18 - 13:13:51
+Change made: testnameold.txt -> testnamenew.txt at 2024/07/18 - 13:13:51
+Change made: testnameold.txt -> testnamenew.txt at 2024/07/18 - 13:14:02
+Change made: testnameold.txt -> testnamenew.txt at 2024/07/18 - 13:14:03
+Change made: testnameold.txt -> testnamenew.txt at 2024/07/18 - 13:14:43
+Change made: testnameold.txt -> testnamenew.txt at 2024/07/18 - 13:14:43
+Change made: testnameold.txt -> testnamenew.txt at 2024/07/18 - 13:16:38
+Change made: testnameold.txt -> testnamenew.txt at 2024/07/18 - 13:16:38
+Change made: testnameold.txt -> testnamenew.txt at 2024/07/18 - 13:17:38
+Change made: testnameold.txt -> testnamenew.txt at 2024/07/18 - 13:17:38
+Change made: testnameold.txt -> testnamenew.txt at 2024/07/18 - 13:17:50
+Change made: testnameold.txt -> testnamenew.txt at 2024/07/18 - 13:17:50
+Change made: testnameold.txt -> testnamenew.txt at 2024/07/18 - 13:18:00
+Change made: testnameold.txt -> testnamenew.txt at 2024/07/18 - 13:18:00
+Change made: testnameold.txt -> testnamenew.txt at 2024/07/18 - 13:18:06
+Change made: testnameold.txt -> testnamenew.txt at 2024/07/18 - 13:18:06
+Change made: testnameold.txt -> testnamenew.txt at 2024/07/18 - 13:21:22
+Change made:  ->  at 2024/07/18 - 13:21:22
+Change made: testnameold.txt -> testnamenew.txt at 2024/07/18 - 13:21:22
+Change made:  ->  at 2024/07/18 - 13:21:22
+Change made: testnameold.txt -> testnamenew.txt at 2024/07/18 - 13:26:12
+Change made:  ->  at 2024/07/18 - 13:26:12
+Change made: testnameold.txt -> testnamenew.txt at 2024/07/18 - 13:26:12
+Change made:  ->  at 2024/07/18 - 13:26:12
+Change made: ./testing folder/test2/tested.txt -> ./testing folder/test2/test.txt at 2024/07/18 - 13:31:20

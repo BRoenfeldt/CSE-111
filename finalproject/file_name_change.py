@@ -2,14 +2,6 @@ import tkinter as tk
 import os
 from datetime import datetime
 
-"""
-ADD IN THE FOLLOWING CODE TO THE MAIN.PY FILE
-Add in better explanations, maybe another pop up window to show the user what the GUI is for.
-Fix GUi sizing so all text is visible
-Think about testing files for final project
-    Currently working on log test
-"""
-
 #Link to usage example on Youtube: https://www.youtube.com/watch?
 
 
@@ -42,7 +34,7 @@ def change_single_file_name(old_directory, new_directory):
         log_changes(old_directory, new_directory)
         #print success messasge
         print(f"Successfully renamed '{old_directory}' to '{new_directory}'. Check log.txt for more information.")
-
+        return None
     #catch the errors and print out the error message
     except FileNotFoundError:
         print(f"Error: The file '{old_directory}' does not exist.")
@@ -62,16 +54,17 @@ def log_changes(old_directory, new_directory):
     current_time = datetime.now(tz=None)
     current_time = current_time.strftime("%Y/%m/%d - %H:%M:%S")
     # Open the log file in append mode
-    with open("log.txt", "a") as file:
+    with open("change_log.txt", "a") as file:
         # Write the changes to the log file
         file.write(f"Change made: {old_directory} -> {new_directory} at {current_time}\n")
+    return None
 
 #define the main function
 def main():
     # Create the main window
     root = tk.Tk()
     root.title("Change File Names")
-    root.geometry("500x250")
+    root.geometry("550x250")
     # Create and pack the header label
     header = tk.Label(root, text="Welcome to the File Name Change GUI!")
     header.pack(pady=10)
@@ -80,15 +73,15 @@ def main():
     explanation.pack(pady=20)
 
     # Create and pack the old file name entry
-    old_file_entry = tk.Entry(root, width=75)
+    old_file_entry = tk.Entry(root, width=80)
     old_file_entry.insert(0, "New File Name - ex: CSE11_notes.txt")
     old_file_entry.pack()
     # Create and pack the new file name entry
-    new_file_entry = tk.Entry(root, width=75)
+    new_file_entry = tk.Entry(root, width=80)
     new_file_entry.insert(0, "Old File Name - ex: class_notes.txt")
     new_file_entry.pack()
     # Create and pack the directory entry
-    directory_entry = tk.Entry(root, width=75)
+    directory_entry = tk.Entry(root, width=80)
     directory_entry.insert(0, "Directory - ex: myFiles/importantFiles (Must be in the same folder as where this script is ran)")
     directory_entry.pack()
 
@@ -126,6 +119,6 @@ def main():
     # Start the GUI event loop
     root.mainloop()
 
-
+#run the main function if imported
 if __name__ == "__main__":
     main()
