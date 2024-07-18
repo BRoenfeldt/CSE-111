@@ -2,7 +2,7 @@ import tkinter as tk
 import os
 from datetime import datetime
 
-#Link to usage example on Youtube: https://www.youtube.com/watch?
+#Link to usage example on Youtube: https://youtu.be/K0L0LbTjmBI
 
 
 def directory_fix(old_filename, directory):
